@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ {{!--  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132835981-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-132835981-1', { 'optimize_id': 'GTM-5MRVW6H'});
+  </script>
+  <!-- Anti-flicker snippet (recommended)  -->
+    <style>.async-hide { opacity: 0 !important} </style>
+    <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+    h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+    (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+    })(window,document.documentElement,'async-hide','dataLayer',4000,
+    {'GTM-5MRVW6H':true});</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KDFC3TP');</script>
+  <!-- End Google Tag Manager --> --}}
+  <title>Rental Car Services</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link href="/css/site.min.css" type="text/css" rel="stylesheet" />
+  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://unpkg.com/simple-gdpr@1.1.5/dist/simplegdpr.min.css" rel="stylesheet">
+  <meta name="description" content="Best car rental prices. Here you'll find it cheap with no credit card fees.  We come in all shapes sizes and types. Such as an SUV,  Intermediate, Premium, 4x4, Estate, Convertible and many more.">
+  <meta name="keywords" content="Rental cars, rental services,travel,cheap prices, rent a car, car rental coupons, car rentals, cars, discount, cheap car rental, luxury car rental">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+</head>
+<body style="background-color: rgb(235, 235, 235)">
+  <header>
+      <nav class="navbar text-white" style="width:100%;">
+        <div class="container-fluid">
+
+          <div class="navbar-header" style="background-color:rgb(94, 166, 255)"> 
+              <button class="navbar-toggle hamburger hamburger--arrowturn-r" type="button" style="top:40px; right:20px; display:none;" data-toggle="collapse" data-target="#myNavbar">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+                <div class="navbar-brand">
+                  <div id="car-rental-logo-icon">
+                    <a href="/" title="Logo button">
+                      <img class="hover" alt="Logo button" src="../images/rental.svg">
+                      <span><img alt="Logo button" title="Logo button" src="../images/rental2.svg"></span>
+                    </a>
+                  </div>
+                </div>
+          </div>
+          <div class="nav-menu collapse navbar-collapse" style="background-color:rgb(123, 182, 255)" id="myNavbar">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/" title="Home">Home</a></li>
+                <li><a href="/about" title="About us">About Us</a></li>
+                {{#if isAdmin}}
+                <li><a href="/cars/add" title="Add cars">Add Car</a></li>
+                {{/if}}
+                <li><a href="/cars/all" title="All cars">All Cars</a></li>
+                <li></li>
+                {{#if currentUser}}
+                  <li><a href="/users/me" title="My Profile">{{currentUser.username}}</a></li>
+                  <li>
+                    <form id="logout-form" action="/users/logout" method="POST"></form>
+                    <a title="Logout" href="javascript:document.getElementById('logout-form').submit()">Logout</a>
+                  </li>
+                {{else}}
+                  <li><a href="/users/register" title="Register">Register</a></li>
+                  <li><a href="/users/login" title="Login">Login</a></li>
+                {{/if}}
+              </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+  <div class="container">
+    
+    {{{body}}}
+    
+    </div>
+  {{!-- <div class="container">
+    <ul class="menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      {{#if isAdmin}}
+        <li><a href="/cars/add">Add Car</a></li>
+      {{/if}}
+      <li><a href="/cars/all">All Cars</a></li>
+      <li></li>
+      {{#if currentUser}}
+        <li><a href="/users/me">{{currentUser.username}}</a></li>
+        <li>
+          <form id="logout-form" action="/users/logout" method="POST"></form>
+          <a href="javascript:document.getElementById('logout-form').submit()">Logout</a>
+        </li>
+      {{else}}
+        <li><a href="/users/register">Register</a></li>
+        <li><a href="/users/login">Login</a></li>
+      {{/if}}
+    </ul>
+    {{#if globalError}}
+      <h3>{{globalError}}</h3>
+    {{/if}}
+    
+    {{{body}}}
+  </div> --}}
+  <div id='footer'>
+    </div>
+    <script src="https://unpkg.com/simple-gdpr@1.1.5/dist/simplegdpr.umd.js"></script>
+  <script>
+     $("#car-rental-logo-icon a").hover(function(e)
+      {$(this).children("span").stop().fadeTo(350,0);},function()
+      {$(this).children("span").stop().fadeTo(350,1);});
+      var $hamburger = $(".hamburger");
+      $hamburger.on("click", function(e) {
+        $hamburger.toggleClass("is-active");});
+      const notice = new SimpleGDPR({
+        theme: 'modern',
+        icons: false,
+        animation: 'slide',
+        float: 'bottom-left',
+        link: './privacypolicy',
+      });
+      notice.appendTo('footer');
+      function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+      if (getCookie('gdpr-accepted') == 'true')
+      {
+        $("#sgdpr-box").hide();
+        $("#footer").hide();
+      }
+      function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      var expires = "expires="+d.toUTCString();
+      document.cookie = cname + "=" + cvalue + "; " + expires;
+      }
+      $("#sgdpr-button").click(function()
+      {
+        setCookie('gdpr-accepted', true, 10);
+        $("#footer").hide();
+      });
+    </script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDFC3TP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+</body>
+</html>
